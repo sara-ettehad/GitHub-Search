@@ -1,5 +1,8 @@
 #hero{
     margin: 50px; 
+    background-image: url(./../images/milad-fakurian-HE1_K4_-QT8-unsplash\ \(1\).jpg);
+    min-height: 700px;
+    padding: 2rem;
 }
 
 .hero--wrapper{
@@ -17,10 +20,11 @@
 #username{
     margin-right: 5px;
     background-color: var(--light-color);
-    border-radius: var(--border-radius-xl);
+    border-radius: var(--border-radius-lg);
+    border: none;
     padding: 1rem 1.5rem;
     width: 30rem;
-    height: 4rem;
+    height: 4.4rem;
 }
 
 .profiles-ul{
