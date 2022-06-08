@@ -1,2 +1,4 @@
-# GitHub-Search
-## Live Preview: https://parisa-ettd.github.io/GitHub-Search/
+﻿# GitHub-Search
+
+#### I was mentored by <a href="https://github.com/dansalahi">@dansalahi</a> 👌
+
