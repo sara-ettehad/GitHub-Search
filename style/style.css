@@ -24,11 +24,15 @@ body{
 #username{
     margin-right: 5px;
     background-color: var(--light-color);
-    border-radius: var(--border-radius-lg);
     border: none;
     padding: 1rem 1.5rem;
     width: 30rem;
     height: 4.4rem;
+    
+    transition: all 0.3s ease-in-out;
+  border-radius: var(--border-radius-lg);
+  box-shadow: 1rem 1rem 4rem 1rem rgb(199, 195, 195);
+  -webkit-box-shadow: 1rem 1rem 4rem 1rem rgb(199, 195, 195);
 }
 
 .profiles-ul{
@@ -51,6 +55,11 @@ body{
     justify-content: flex-start;
     background-color: var(--light-color);
     width: 90rem;
+    border-radius: var(--border-radius-xl);
+    transition: all 0.3s ease-in-out;
+  border-radius: var(--border-radius-sm);
+  box-shadow: 1rem 1rem 4rem 1rem rgb(199, 195, 195);
+  -webkit-box-shadow: 1rem 1rem 4rem 1rem rgb(199, 195, 195);
 }
 
 
