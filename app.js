@@ -3,9 +3,11 @@ const API_URL = "https://api.github.com/users/";
 const btnSearch = document.querySelector(".btn-search");
 const inputSearch = document.querySelector("#username");
 
-const peapleList = document.querySelector("#profiles")
+const peapleList = document.querySelector("#profiles");
 
-btnSearch.addEventListener("click", (event) => {
+
+
+function functionality() {
   // console.log({ input: inputSearch.value });
 
   let searchTerm = inputSearch.value;
@@ -24,7 +26,7 @@ btnSearch.addEventListener("click", (event) => {
       console.log(data);
       render(data);
     });
-});
+};
 
 // function getUser(username) {}
 
@@ -80,3 +82,8 @@ function render(data) {
   message.innerText = "";
   
 }
+
+document.addEventListener("keydown", function (e) {
+  if (e.code === "Enter") functionality();
+});
+searchBtn.addEventListener("click", functionality);

@@ -1,8 +1,12 @@
-#hero{
-    margin: 50px; 
+body{
     background-image: url(./../images/milad-fakurian-HE1_K4_-QT8-unsplash\ \(1\).jpg);
-    min-height: 700px;
-    padding: 2rem;
+    -webkit-background-size: cover;
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin: 0px;
+    padding: 30px;
+    height: 100%;
 }
 
 .hero--wrapper{
