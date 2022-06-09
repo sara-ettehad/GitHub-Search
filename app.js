@@ -32,8 +32,8 @@ function functionality() {
 
 function render(data) {
   const { avatar_url, login, public_repos, following, followers, location, name, bio } = data;
-  const li = document.createElement("li");
-  li.classList.add("profiles");
+  const div = document.createElement("div");
+  div.classList.add("profiles");
   const markup = `
     <div class='profile-github'>
         <div class='profile-github-grid1'>
@@ -77,10 +77,9 @@ function render(data) {
         </div>
     </div>
   `;
-  li.innerHTML = markup;
-  peapleList.appendChild(li);
+  div.innerHTML = markup;
+  peapleList.appendChild(div);
   message.innerText = "";
-  
 }
 
 document.addEventListener("keydown", function (e) {
