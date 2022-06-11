@@ -85,4 +85,4 @@ function render(data) {
 document.addEventListener("keydown", function (e) {
   if (e.code === "Enter") functionality();
 });
-searchBtn.addEventListener("click", functionality);
+btnSearch.addEventListener("click", functionality);
