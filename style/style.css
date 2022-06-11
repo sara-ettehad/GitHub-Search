@@ -6,12 +6,24 @@ body{
     margin: 0px;
     padding: 30px;
     height: 100%;
-}
-
-.hero--wrapper{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+}
+.p-none {
+    display: none;
+  }
+
+  .profile-sm {
+    height: 155px !important;
+  }
+
+#error{
+    position: relative;
+    top: -50px;
+    left: -140px;
+    font-size: large;
 }
 
 .form{
@@ -20,7 +32,7 @@ body{
     flex-direction: row;
 }
 
-#username{
+.username{
     margin-right: 5px;
     background-color: var(--light-color);
     border: none;
@@ -39,24 +51,32 @@ body{
     flex-direction: row;
 }
 
-.profile-icon{
+#profile-icon{
     border-radius: 100%;
     overflow: hidden;
     width: 80px;
     height: 80px;
 }
 
-.profile-github{
+.show-state .profiles {
+    width: 90rem;
+    height: auto;
     padding: 30px 30px;
-    margin: 40px 100px;
+    padding-top: 2.5rem;
+    margin-top: 2.5rem;
+  }
+  
+.profiles{
+    margin: 0px 100px;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
     background-color: var(--light-color);
-    width: 90rem;
-    border-radius: var(--border-radius-xl);
+    border-radius: var(--border-radius-2xl);
     transition: all 0.3s ease-in-out;
-  border-radius: var(--border-radius-sm);
   box-shadow: 1rem 1rem 4rem 1rem rgb(199, 195, 195);
   -webkit-box-shadow: 1rem 1rem 4rem 1rem rgb(199, 195, 195);
 }

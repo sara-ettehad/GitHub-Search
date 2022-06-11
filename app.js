@@ -1,88 +1,70 @@
 const API_URL = "https://api.github.com/users/";
 
-const btnSearch = document.querySelector(".btn-search");
-const inputSearch = document.querySelector("#username");
 
-const peapleList = document.querySelector("#profiles");
+const inputSearch = document.querySelector("#username-input");
+const searchBtn = document.getElementById("search-button");
+const containerEl = document.querySelector(".container");
+const profileEl = document.querySelector(".profiles");
+
+
+const avatarEl = document.getElementById("profile-icon");
+const nameEl = document.getElementById("name");
+const idEl = document.getElementById("user-name");
+const followerEl = document.getElementById("profile-follower");
+const followingEl = document.getElementById("profile-following");
+const repoEl = document.getElementById("profile-repo");
+const bioEl = document.getElementById("profile-bio");
+const locationEl = document.getElementById("profile-location");
 
 
 
-function functionality() {
-  // console.log({ input: inputSearch.value });
 
-  let searchTerm = inputSearch.value;
+  function functionality() {
+    let searchTerm = inputSearch.value;
 
-  if (!searchTerm) {
-    alert("Please enter username");
-    return;
-  }
+    if (!searchTerm) {
+      alert("Please enter username");
+      return;
+    }
 
-  // 2 req: Sync / Async
-  fetch(API_URL + searchTerm, { method: "GET" })
+    fetch(API_URL + searchTerm, { method: "GET" })
     .then(function (response) {
       return response.json();
     })
-    .then((data) => {
-      console.log(data);
-      render(data);
+    .then((profiles) => {
+        if (profiles.message) {
+          containerEl.classList.remove("show-state");
+        } else{
+            containerEl.classList.add("show-state");
+
+            avatarEl.setAttribute("src", profiles.avatar_url);
+            profiles.hireable ? containerEl.classList.add("hireable") : "";
+            nameEl.textContent = profiles.name;
+            idEl.textContent = `@${profiles.login}`;
+            followerEl.textContent = profiles.followers;
+            followingEl.textContent = profiles.following;
+            repoEl.textContent = profiles.public_repos;
+            
+
+            locationEl.textContent = profiles.location;
+            profiles.location
+            ? locationEl.parentElement.classList.remove("p-none")
+            : locationEl.parentElement.classList.add("p-none");
+
+            bioEl.textContent = profiles.bio;
+            profiles.bio
+            ? bioEl.classList.remove("profile-sm")
+            : bioEl.classList.add("profile-sm");
+        }
+    })    
+    .catch((e) => {
+        console.log(e);
     });
+
 };
 
-// function getUser(username) {}
-
-function render(data) {
-  const { avatar_url, login, public_repos, following, followers, location, name, bio } = data;
-  const div = document.createElement("div");
-  div.classList.add("profiles");
-  const markup = `
-    <div class='profile-github'>
-        <div class='profile-github-grid1'>
-            <figure>
-                <img class='profile-icon' src='${avatar_url}' alt = 'profile'>
-            </figure>
-        </div>
-        
-        <div class='profile-github-grid2'>
-            <div class='profile-header'>
-                <h2 class='name' data-name=${name}>
-                    <var>${name}</var>
-                </h2>
-                <p class='user-name' data-username=${login}>
-                    <span>@</span>
-                    <var>${login}</var>
-                </p>
-            </div>    
-            <div class='peaple-info'>
-                <div class='profile-info-column1'>
-                    <div class='profile-info-row1-grid'>
-                        <var>${public_repos}</var>
-                        <span>posts</span>
-                    </div>
-                    <div class='profile-info-row1-grid'>
-                        <var>${followers}</var>
-                        <span>followers</span>
-                    </div>
-                    <div class='profile-info-row1-grid'>
-                        <var>${following}</var>
-                        <span>followings</span>
-                    </div>
-                </div>
-                <div class='profile-info-column2'>
-                    <var>${location}</var>
-                </div>
-                <div class='profile-info-column3'>
-                    <var>${bio}</var>
-                </div>
-            </div>
-        </div>
-    </div>
-  `;
-  div.innerHTML = markup;
-  peapleList.appendChild(div);
-  message.innerText = "";
-}
 
 document.addEventListener("keydown", function (e) {
-  if (e.code === "Enter") functionality();
-});
-btnSearch.addEventListener("click", functionality);
+    if (e.code === "Enter") functionality();
+  });
+  searchBtn.addEventListener("click", functionality);
