@@ -46,7 +46,7 @@ const locationEl = document.getElementById("profile-location");
             repoEl.textContent = profiles.public_repos;
             
 
-            locationEl.textContent = profiles.location;
+            locationEl.textContent = `📍${profiles.location}` ;
             profiles.location
             ? locationEl.parentElement.classList.remove("p-none")
             : locationEl.parentElement.classList.add("p-none");

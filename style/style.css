@@ -80,9 +80,17 @@ body{
   box-shadow: 1rem 1rem 4rem 1rem rgb(199, 195, 195);
   -webkit-box-shadow: 1rem 1rem 4rem 1rem rgb(199, 195, 195);
 }
+.left{
+    display: flex;
+    flex-direction: row;
+}
 
+.profile-info-column2{
+    margin: 8px 0px;
+}
 
 .profile-info-column1{
+    margin: 8px 0px;
     display: flex;
     flex-direction: row;
 }
@@ -105,10 +113,15 @@ body{
 
 .user-name{
     color: var(--gray-color);
-    font-style: italic;
+    margin: 8px 0px;
 }
 
 .profile-info-row1-grid span{
     color: var(--gray-color);
-    font-style: italic;
+}
+
+#profile-location{
+    display: flex;
+    flex-direction: row;
+    color: black;
 }
