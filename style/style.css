@@ -1,9 +1,8 @@
 body{
     background-image: url(./../images/milad-fakurian-HE1_K4_-QT8-unsplash\ \(1\).jpg);
-    -webkit-background-size: cover;
-    background-size:cover;
     background-repeat: no-repeat;
     background-position: center center;
+    object-fit: cover;
     margin: 0px;
     padding: 30px;
     height: 100%;
